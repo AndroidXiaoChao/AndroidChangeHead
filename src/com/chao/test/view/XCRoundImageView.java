@@ -81,7 +81,9 @@ public class XCRoundImageView extends ImageView {
 		Bitmap sbmp;
 		// 比较初始Bitmap宽高和给定的圆形直径，判断是否需要缩放裁剪Bitmap对象
 		if (bmp.getWidth() != radius || bmp.getHeight() != radius)
-			sbmp = Bitmap.createScaledBitmap(bmp, radius, radius, false);
+			sbmp = Bitmap.createScaledBitmap(bmp, radius, radius, true);
+			
+//			sbmp = Bitmap.createBitmap(bmp, x, y, width, height);
 		else
 			sbmp = bmp;
 		Bitmap output = Bitmap.createBitmap(sbmp.getWidth(), sbmp.getHeight(),
